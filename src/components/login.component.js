@@ -118,7 +118,7 @@ const Login = () => {
       
       </div>
       <p className="forgot-password text-right">
-        Forgot <a href="#">password?</a>
+        Forgot <a href="#Home">password?</a>
       </p>
       <div class="alert alert-success msg" style={{padding:"15px"}} ref={msgref} role="alert" data-testid="success">
         <CheckIcon fontSize="medium"/>  Login Successful
