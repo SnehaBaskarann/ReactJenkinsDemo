@@ -1,4 +1,4 @@
-FROM node:18 
+FROM node
 WORKDIR /app/reactapp
 COPY package.json /app/reactapp
 RUN npm install
