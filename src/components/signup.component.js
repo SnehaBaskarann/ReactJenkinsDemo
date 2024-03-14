@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { useState, useRef } from 'react';
 // import { Message } from 'rsuite';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 //import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
@@ -64,12 +63,12 @@ const Register = () => {
       headers: headers
     }).then((response) => {
       var result =JSON.parse(response.data)
-      if (response.data == null || response.data == undefined) {
+      if (response.data === null || response.data === undefined) {
         console.log(response.data);
       } 
       
 
-      else if(result.accountexist==true)
+      else if(result.accountexist===true)
       {
         console.log(result)
         nullref.current.style.display="block";
