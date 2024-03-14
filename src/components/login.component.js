@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { useState, useRef } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 // import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
@@ -39,7 +39,7 @@ const Login = () => {
     await axios.post(URL, param, {
       headers: headers
     }).then((response) => {
-      if (response.data == null || response.data == undefined) {
+      if (response.data === null || response.data === undefined) {
         console.log("success");
       } else {
         console.log(response.data);
@@ -47,7 +47,7 @@ const Login = () => {
         // JSON.parse(response["data"]); // should work
         var result = JSON.parse(response.data)
         console.log(result.emailstatus) // or if you prefer this notation
-        if (result.emailstatus == true && result.passwordstatus == true) {
+        if (result.emailstatus === true && result.passwordstatus === true) {
           msgref.current.style.display="block";
 
           setTimeout(() => {
@@ -56,12 +56,12 @@ const Login = () => {
           }, 2000);
 
         }
-        else if (result.emailstatus == false && result.passwordstatus == false) {
+        else if (result.emailstatus === false && result.passwordstatus === false) {
           nullemail.current.style.display="block";
           nullpsd.current.style.display="none";
         }
 
-        else if (result.emailstatus == true && result.passwordstatus == false) {
+        else if (result.emailstatus === true && result.passwordstatus === false) {
           nullpsd.current.style.display="block";
           nullemail.current.style.display="none";
 
